@@ -1,0 +1,16 @@
+<!-- <div class="example-drag-box" id="box" >
+<div class="example-drag" cdkDrag cdkDragBoundary="#box" ></div>
+</div> -->
+<ng-container  cdkDropListGroup >
+  <div class="container" >
+<div class="list" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="todo" >
+  <div class="list-item"  cdkDrag *ngFor="let item of todo" >{{item}}</div>
+</div>
+</div>
+
+<div class="container" >
+<div class="list" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="done"  >
+  <div class="list-item" cdkDrag *ngFor="let item of done" >{{item}}</div>
+</div>
+</div>
+</ng-container>
